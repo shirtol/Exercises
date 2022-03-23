@@ -22,6 +22,7 @@
             <h3>
                 I am a programmer
                 <i
+                    id="heart-icon"
                     class="fa fa-heart"
                     style="font-size: 24px; color: palevioletred"
                 ></i>
@@ -30,7 +31,8 @@
         <!-- An image of myself -->
         <div>
             <img
-                src="/images/profile_img.jpeg"
+                id="self-img"
+                src="./images/profile_img.jpeg"
                 alt="profile image"
                 width="200"
                 style="border-radius: 8px"
@@ -56,46 +58,56 @@
         </h4>
 
         <a href="https://htmlcheatsheet.com/" target="_blank">
-            <button>HTML, CSS, JS CheatSheet</button>
+            <button class="btn" id="cheatsheet-btn">
+                HTML, CSS, JS CheatSheet
+            </button>
         </a>
 
         <!-- A list of social links -->
         <div>
             <h3>Follow me🙌</h3>
-            <div style="float: left">
-                <a
-                    href="https://www.facebook.com/shir.zahavi"
-                    class="fa fa-facebook-square"
-                    style="
-                        font-size: 40px;
-                        color: palevioletred;
-                        margin-right: 20px;
-                    "
-                    target="_blank"
-                ></a>
-            </div>
-
-            <div style="float: left">
-                <a
-                    href="https://www.linkedin.com/feed/"
-                    class="fa fa-linkedin-square"
-                    style="
-                        font-size: 40px;
-                        color: palevioletred;
-                        margin-right: 20px;
-                    "
-                    target="_blank"
-                >
-                </a>
-            </div>
-            <div>
-                <a href="https://github.com/shirtol" target="_blank">
-                    <i
-                        class="fa fa-github"
-                        style="font-size: 40px; color: palevioletred"
-                    ></i
-                ></a>
-            </div>
+            <ul>
+                <li style="display: inline-block" class="social-link">
+                    <div>
+                        <a
+                            href="https://www.facebook.com/shir.zahavi"
+                            class="fa fa-facebook-square"
+                            style="
+                                font-size: 40px;
+                                color: palevioletred;
+                                margin-right: 20px;
+                            "
+                            target="_blank"
+                        ></a>
+                    </div>
+                </li>
+                <li style="display: inline-block" class="social-link">
+                    <div>
+                        <a
+                            href="https://www.linkedin.com/feed/"
+                            class="fa fa-linkedin-square"
+                            style="
+                                font-size: 40px;
+                                color: palevioletred;
+                                margin-right: 20px;
+                            "
+                            target="_blank"
+                        >
+                        </a>
+                    </div>
+                </li>
+                <li style="display: inline-block" class="social-link">
+                    <div>
+                        <a href="https://github.com/shirtol" target="_blank">
+                            <i
+                                class="fa fa-github"
+                                style="font-size: 40px; color: palevioletred"
+                            >
+                            </i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </body>
 </html>
