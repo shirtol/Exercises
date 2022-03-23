@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise 3.1- Forms</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <h1>Create an Account</h1>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <br />
+                <input type="email" name="email" id="email" />
+            </div>
+            <br />
+            <div>
+                <label for="password">Password:</label><br />
+                <input type="password" name="password" id="password" />
+            </div>
+            <br />
+            <div>
+                <label for="age">Age:</label><br />
+                <select name="age" id="age">
+                    <option value="select">Select Age</option>
+                    <option value="kid">0-10</option>
+                    <option value="teen">11-20</option>
+                    <option value="twenties">21-30</option>
+                    <option value="thirties">31-40</option>
+                    <option value="fourties">41-50</option>
+                    <option value="fifthties">51-60</option>
+                    <option value="sixties">61-70</option>
+                    <option value="seventies">71-80</option>
+                    <option value="nineties">91-100</option>
+                    <option value="overonehundred">100+</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <label for="message">Tell us a little about yourself:</label
+                ><br />
+                <textarea
+                    name="message"
+                    id="message"
+                    cols="50"
+                    rows="7"
+                ></textarea>
+            </div>
+            <br />
+            <div>
+                <input
+                    type="checkbox"
+                    name="agreed"
+                    id="agreed"
+                    value="agreed"
+                />I agree to the
+                <a
+                    href="https://en.wikipedia.org/wiki/Terms_of_service"
+                    target="_blank"
+                    >terms of service.</a
+                >
+            </div>
+            <br />
+            <div>
+                <input type="submit" value="Sign Up" />
+            </div>
+        </form>
+    </body>
+</html>
