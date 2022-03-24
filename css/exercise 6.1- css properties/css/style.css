@@ -1,0 +1,17 @@
+#sub-exercise-1 {
+    border: thin solid red;
+    font-size: x-large;
+    border-radius: 8px;
+}
+
+#sub-exercise-2 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#sub-exercise-3 {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}

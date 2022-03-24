@@ -1,0 +1,83 @@
+body {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+    );
+}
+
+#main-header,
+h3 {
+    font-family: "Red Hat Mono", monospace;
+    font-weight: bold;
+}
+
+#heart-icon {
+    font-size: 24px;
+    color: palevioletred;
+}
+
+#self-img {
+    width: 200px;
+    border-radius: 8px;
+}
+
+p {
+    font-size: 18px;
+    font-family: "Red Hat Mono", monospace;
+}
+
+#passion {
+    color: rgb(56, 55, 56);
+    font-weight: bold;
+    font-size: large;
+}
+
+.secondary-title {
+    font-family: "Red Hat Mono", monospace;
+}
+
+button {
+    background-color: rgb(216, 207, 207);
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.8);
+    font-family: "Red Hat Mono", monospace;
+}
+
+button:hover {
+    background-color: rgb(165, 158, 160);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+}
+
+.facebook-card,
+.linkedin-card,
+.github-card {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 70px;
+    background-color: rgb(236, 222, 235);
+    padding: 8px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+#facebook,
+#linkedin,
+#github {
+    width: 50px;
+}
+
+.facebook-card:hover,
+.linkedin-card:hover,
+.github-card:hover {
+    transform: scale(1.1);
+}
+
+.social-link {
+    font-size: smaller;
+    margin: 0 auto;
+}
