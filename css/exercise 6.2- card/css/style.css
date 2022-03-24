@@ -1,14 +1,19 @@
-div {
+.card {
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
     width: 400px;
     height: 460px;
     background-color: rgb(224, 222, 195);
+    padding: 0px;
+}
+.text {
     padding: 8px;
 }
 
 img {
     width: 400px;
     height: 280px;
+    margin: 0;
+    padding: 0;
 }
 
 h3 {
