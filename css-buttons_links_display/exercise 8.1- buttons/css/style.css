@@ -1,0 +1,129 @@
+body {
+    background-color: rgba(51, 51, 100, 0.781);
+}
+
+button {
+    border: none;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.big {
+    padding: 12px 50px;
+}
+
+.medium {
+    padding: 9px 30px;
+}
+
+.small {
+    padding: 7px 15px;
+}
+
+.round {
+    border-radius: 20px;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+#btn1 {
+    background: rgb(67, 204, 85);
+}
+
+#btn1:hover {
+    background: green;
+}
+
+#btn2 {
+    background: red;
+}
+
+#btn2:hover {
+    background: rgb(161, 14, 14);
+}
+
+#btn3 {
+    background: rgb(41, 123, 179);
+}
+
+#btn3:hover {
+    background: rgb(24, 66, 121);
+}
+
+#btn4 {
+    background: orange;
+}
+
+#btn4:hover {
+    background: rgb(182, 122, 10);
+}
+
+#btn5 {
+    background: rgb(243, 228, 11);
+}
+
+#btn5:hover {
+    background: rgb(171, 173, 15);
+}
+
+#btn6 {
+    background: rgb(128, 126, 124);
+}
+
+#btn6:hover {
+    background: rgb(78, 78, 78);
+}
+
+#btn7 {
+    border: 2px solid rgb(67, 204, 85);
+    color: black;
+}
+
+#btn7:hover {
+    background: rgb(67, 204, 85);
+}
+#btn8 {
+    border: 2px solid red;
+    color: black;
+}
+
+#btn8:hover {
+    background: red;
+}
+
+#btn9 {
+    border: 2px solid rgb(41, 123, 179);
+    color: black;
+}
+
+#btn9:hover {
+    background: rgb(41, 123, 179);
+}
+
+#btn10 {
+    border: 2px solid orange;
+    color: black;
+}
+
+#btn10:hover {
+    background: orange;
+}
+
+#btn11 {
+    border: 2px solid rgb(243, 228, 11);
+    color: black;
+}
+
+#btn11:hover {
+    background: rgb(243, 228, 11);
+}
+#btn12 {
+    border: 2px solid rgb(128, 126, 124);
+    color: black;
+}
+
+#btn12:hover {
+    background: rgb(128, 126, 124);
+}
