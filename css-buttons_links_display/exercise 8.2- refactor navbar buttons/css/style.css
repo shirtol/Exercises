@@ -10,6 +10,7 @@ body {
     background-color: #444;
     color: #fff;
     line-height: 2em;
+    padding-bottom: 30px;
 }
 
 .navbar {
@@ -38,6 +39,14 @@ body {
     text-align: center;
     margin: 8px;
     padding: 2px;
+}
+
+#main-header {
+    margin-bottom: 25px;
+}
+
+#job-description {
+    margin-bottom: 20px;
 }
 
 #heart-icon {
@@ -104,6 +113,7 @@ button:hover {
 
 #follow {
     margin: 5px;
+    margin-top: 30px;
     padding: 5px;
     text-align: center;
 }
