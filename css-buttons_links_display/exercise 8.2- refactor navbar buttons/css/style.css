@@ -5,14 +5,12 @@
 }
 
 body {
-    max-width: 2000px;
+    max-width: 100%;
     font-family: "Red Hat Mono", monospace;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(
-        circle,
-        rgba(238, 174, 202, 1) 0%,
-        rgba(148, 187, 233, 1) 100%
-    );
+
+    background-color: #444;
+    color: #fff;
+    line-height: 2em;
 }
 
 .navbar {
@@ -30,6 +28,10 @@ body {
     text-decoration: none;
     padding: 15px 20px;
     font-size: 18px;
+}
+
+.navbar li a:hover {
+    color: antiquewhite;
 }
 
 #main-header,
@@ -70,7 +72,7 @@ p {
 }
 
 #passion {
-    color: rgb(71, 68, 68);
+    color: palevioletred;
     font-weight: bold;
     font-size: large;
     margin: 1px;
@@ -110,12 +112,9 @@ button:hover {
 .card-container {
     margin: 0 auto;
     padding: 2px;
-    width: max-content;
 }
 
 .card-row {
-    display: block;
-    float: inline-end;
     width: 50%;
     margin: 0 auto;
     padding: 5px;
@@ -128,12 +127,10 @@ button:hover {
     width: 75px;
     height: 84px;
     background-color: rgb(236, 222, 235);
-    padding: 8px;
+    padding-top: 8px;
     margin: 0 auto;
     text-align: center;
-    display: inline-block;
     border-radius: 6px;
-    float: none;
 }
 
 #facebook,
@@ -153,6 +150,12 @@ button:hover {
 .social-link {
     font-size: smaller;
     margin-top: 0;
-    margin: 1px;
-    padding: 1px;
+}
+
+.botoom-btn {
+    background: rgb(236, 222, 235);
+    font-size: 22px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 50px;
 }
