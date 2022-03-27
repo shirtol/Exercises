@@ -1,5 +1,7 @@
 body {
-    background-color: rgba(51, 51, 100, 0.781);
+    background-color: #32465f;
+    margin: 300px;
+    text-align: center;
 }
 
 button {
@@ -29,101 +31,95 @@ button {
 }
 
 #btn1 {
-    background: rgb(67, 204, 85);
+    background: #00dd76;
 }
 
 #btn1:hover {
-    background: green;
+    background: #02af5f;
 }
 
 #btn2 {
-    background: red;
+    background: #fc2423;
 }
 
 #btn2:hover {
-    background: rgb(161, 14, 14);
+    background: #d31f1f;
 }
 
 #btn3 {
-    background: rgb(41, 123, 179);
+    background: #0e8ddd;
 }
 
 #btn3:hover {
-    background: rgb(24, 66, 121);
+    background: #0077c6;
 }
 
 #btn4 {
-    background: orange;
+    background: #f47900;
 }
 
 #btn4:hover {
-    background: rgb(182, 122, 10);
+    background: #cb6000;
 }
 
 #btn5 {
-    background: rgb(243, 228, 11);
+    background: #f1cd02;
 }
 
 #btn5:hover {
-    background: rgb(171, 173, 15);
+    background: #c9a600;
 }
 
 #btn6 {
-    background: rgb(128, 126, 124);
+    background: #7c8c8c;
 }
 
 #btn6:hover {
-    background: rgb(78, 78, 78);
+    background: #647475;
 }
 
 #btn7 {
-    border: 2px solid rgb(67, 204, 85);
-    color: black;
+    border: 2px solid #00dd76;
 }
 
 #btn7:hover {
-    background: rgb(67, 204, 85);
+    background: #00dd76;
 }
 #btn8 {
-    border: 2px solid red;
-    color: black;
+    border: 2px solid #fc2423;
 }
 
 #btn8:hover {
-    background: red;
+    background: #fc2423;
 }
 
 #btn9 {
-    border: 2px solid rgb(41, 123, 179);
-    color: black;
+    border: 2px solid #0e8ddd;
 }
 
 #btn9:hover {
-    background: rgb(41, 123, 179);
+    background: #0e8ddd;
 }
 
 #btn10 {
-    border: 2px solid orange;
-    color: black;
+    border: 2px solid #f47900;
 }
 
 #btn10:hover {
-    background: orange;
+    background: #f47900;
 }
 
 #btn11 {
-    border: 2px solid rgb(243, 228, 11);
-    color: black;
+    border: 2px solid #f1cd02;
 }
 
 #btn11:hover {
-    background: rgb(243, 228, 11);
+    background: #f1cd02;
 }
 #btn12 {
-    border: 2px solid rgb(128, 126, 124);
-    color: black;
+    border: 2px solid #7c8c8c;
 }
 
 #btn12:hover {
-    background: rgb(128, 126, 124);
+    background: #7c8c8c;
 }
