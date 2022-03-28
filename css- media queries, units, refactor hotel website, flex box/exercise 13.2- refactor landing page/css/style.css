@@ -31,7 +31,7 @@ body {
     font-weight: bolder;
 }
 
-#main {
+#welcome-msg {
     background: url("../images/background-work.jpg") no-repeat center
         center/cover;
     height: 100%;
@@ -44,20 +44,20 @@ body {
     padding: 0 20px;
 }
 
-#main .content {
+#welcome-msg .content {
     color: #333;
     text-align: center;
     padding-top: 22rem;
 }
 
-#main .content h1 {
+#welcome-msg .content h1 {
     margin-bottom: 3rem;
     font-weight: bold;
     font-size: 3rem;
     line-height: 4rem;
 }
 
-#main .content p {
+#welcome-msg .content p {
     font-size: 2rem;
     padding-bottom: 2rem;
 }
@@ -114,11 +114,11 @@ body {
 }
 
 @media (max-width: 615px) {
-    #main .content h1 {
+    #welcome-msg .content h1 {
         font-size: 2rem;
     }
 
-    #main .content p {
+    #welcome-msg .content p {
         font-size: 1.3rem;
     }
 
