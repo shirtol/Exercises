@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-}
-
 div {
     background: #444;
     color: #fff;
@@ -28,9 +25,6 @@ div {
 }
 
 @media (max-width: 1297px) {
-    /* div {
-    } */
-
     #first {
         left: 0;
     }
