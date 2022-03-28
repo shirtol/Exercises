@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    list-style: none;
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.navbar li a:hover {
+    color: black;
+    font-weight: bolder;
+}
+
+#main {
+    background: url("../images/background-work.jpg") no-repeat center
+        center/cover;
+    height: 100%;
+}
+
+.container {
+    margin: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+#main .content {
+    color: #333;
+    text-align: center;
+    padding-top: 22rem;
+}
+
+#main .content h1 {
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+#main .content p {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #333;
+    padding: 1.3rem, 2.1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn:hover {
+    color: antiquewhite;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    padding: 1.5rem;
+    text-align: center;
+    background: #fff;
+}
+
+#box-1 {
+    border-right: #333 solid 0.1rem;
+}
+
+.box i {
+    margin-bottom: 1rem;
+}
+
+.box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.box p {
+    font-size: 1.1rem;
+}
+
+#main-footer {
+    text-align: center;
+    background: #444;
+    color: #fff;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 615px) {
+    #main .content h1 {
+        font-size: 2rem;
+    }
+
+    #main .content p {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .box h3 {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .box p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 412px) {
+    .navbar,
+    .navbar li {
+        float: none;
+    }
+
+    .navbar li a {
+        padding: 0.5rem;
+        text-align: center;
+        border-bottom: #444 dotted 1px;
+    }
+}
