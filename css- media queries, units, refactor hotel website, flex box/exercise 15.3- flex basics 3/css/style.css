@@ -11,6 +11,8 @@ body {
 .container {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
     margin-top: calc(100vh - 150px);
 }
 
@@ -19,7 +21,6 @@ body {
     width: 150px;
     height: 150px;
     flex-basis: 200px;
-    align-items: flex-end;
 }
 
 #box-1 {
