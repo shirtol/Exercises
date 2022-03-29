@@ -9,7 +9,6 @@
     height: 200px;
     background: red;
     position: relative;
-    /* z-index: -1;  */
 }
 
 .box-1::before {
