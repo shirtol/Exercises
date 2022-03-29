@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box-1 {
+    width: 200px;
+    height: 200px;
+    background: red;
+    position: relative;
+    /* z-index: -1;  */
+}
+
+.box-1::before {
+    content: "";
+    width: 100px;
+    height: 200px;
+    background: purple;
+    position: absolute;
+    z-index: 999;
+}
+
+.box-1:hover::before {
+    background: blue;
+}
