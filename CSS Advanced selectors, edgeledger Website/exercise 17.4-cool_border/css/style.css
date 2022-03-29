@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    padding: 2rem;
+
+    position: relative;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    align-self: center;
+}
+
+header:before,
+header:after,
+header > h1:before,
+header > h1:after {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: red;
+    border-style: solid;
+    content: " ";
+}
+
+header:before {
+    top: -5px;
+    left: -10px;
+    border-width: 4px 0 0 4px;
+}
+
+header:after {
+    top: -5px;
+    right: -10px;
+    border-width: 4px 4px 0 0;
+}
+
+header > :first-child:after {
+    bottom: -5px;
+    right: -10px;
+    border-width: 0 4px 4px 0;
+}
+
+header > :first-child::before {
+    bottom: -5px;
+    left: -10px;
+    border-width: 0 0 4px 4px;
+}
