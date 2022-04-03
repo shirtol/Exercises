@@ -16,13 +16,14 @@ html {
         "item-5 item-5 item-5 item-5";
     gap: 1rem;
     padding: 2rem;
+    height: 100vh;
+    grid-template-rows: 10% 80% 10%;
 }
 
 .item {
     padding: 3rem;
     border-radius: 1rem;
     font-size: 2rem;
-    /* text-align: top; */
 }
 
 #item-1 {
@@ -64,5 +65,6 @@ html {
             "item-3"
             "item-4"
             "item-5";
+        grid-template-rows: 20%;
     }
 }
