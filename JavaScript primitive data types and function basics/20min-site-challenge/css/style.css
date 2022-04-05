@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-color: #8484ff;
+    --navbat-text-color: #fff;
+    --hover-and-mobile-color: #39396e;
+    --par-color: #cacafd;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--main-color);
+}
+
+ul li {
+    list-style: none;
+    padding: 2rem;
+    position: relative;
+    margin: 0 1rem;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--navbat-text-color);
+}
+
+li:hover {
+    background: var(--hover-and-mobile-color);
+    transition: 0.5s ease-in;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    padding: 3rem;
+    letter-spacing: 0.3rem;
+    margin: 5rem 0;
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.container {
+    margin: 0 5%;
+}
+
+h2 {
+    text-decoration: underline;
+    padding: 3rem;
+    font-size: 1.7rem;
+}
+
+.first,
+.second {
+    background: var(--par-color);
+    padding: 3rem;
+    margin: 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
+p {
+    width: 50%;
+    padding: 2rem 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 25%;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    align-self: center;
+}
+
+.last {
+    margin: 0 50%;
+}
+
+@media (max-width: 990px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .last {
+        margin: 0;
+    }
+}
+
+@media (max-width: 660px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    ul li {
+        padding: 0;
+        margin: 0.4rem;
+        background: var(--hover-and-mobile-color);
+        padding: 0.7rem 2rem;
+        border-radius: 8px;
+    }
+
+    .container,
+    .first,
+    .second {
+        margin: 0 1rem;
+    }
+
+    .first,
+    .second {
+        margin-bottom: 3rem;
+    }
+
+    p {
+        width: 100%;
+    }
+}
