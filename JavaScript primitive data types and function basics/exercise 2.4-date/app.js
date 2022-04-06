@@ -53,4 +53,4 @@ function todayDateTwo() {
     return `Today is ${currentDay} the ${currentDayOfMonth} of ${currentMonth}, ${currentYear}`;
 }
 
-console.log(todayDate());
+console.log(todayDateTwo());
