@@ -4,7 +4,7 @@ const school = {
             id: 1,
             name: "Pinchas",
             subjects: ["chemistry", "biology", "physics"],
-            students: [{ id: 10, name: "Jennifer", age: 20 }],
+            students: [],
             capacityLeft: 3,
         },
         {
@@ -50,11 +50,11 @@ const school = {
                 teacher.subjects.includes(subject) && teacher.capacityLeft !== 0
         );
         if (availableTeachersArr.length === 0) {
-            return "no available teachers left";
+            return "Sorry, no available teachers left";
         } else {
             let chosenteacher = availableTeachersArr[0];
             chosenteacher.students.push(student);
-            chosenteacher.capacityLeft -= 1;
+            chosenteacher.capacityLeft--;
         }
     },
 
@@ -68,7 +68,7 @@ const school = {
     favoriteTeacher: function () {
         let favTeacher;
         let maxStudents = 0;
-        for (teacher of school.teachers) {
+        for (teacher of this.teachers) {
             if (teacher.students.length > maxStudents) {
                 maxStudents = teacher.students.length;
                 favTeacher = teacher;
@@ -78,14 +78,14 @@ const school = {
     },
 };
 
-console.log(school.findPerson(school.students, 12));
+// console.log(school.findPerson(school.students, 12));
 
-school.assignStudent(12, "history");
-console.log(school);
-console.log(school.teachers[0].students);
-console.log(school.teachers[1].students);
+// school.assignStudent(12, "history");
+// console.log(school);
+// console.log(school.teachers[0].students);
+// console.log(school.teachers[1].students);
 
-school.assignTeachersSubject(2, "history");
-school.assignTeachersSubject(2, "biology");
-console.log(school.teachers[1].subjects);
-console.log(school.favoriteTeacher());
+// school.assignTeachersSubject(2, "history");
+// school.assignTeachersSubject(2, "biology");
+// console.log(school.teachers[1].subjects);
+// console.log(school.favoriteTeacher());
