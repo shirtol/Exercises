@@ -1,6 +1,6 @@
 // 11.2.1
 const myArr = [1, 2, 3, 4, 5, 6];
-
+// forEach
 const doubleValues = (arr) => {
     const doubleArr = [];
     arr.forEach((num) => {
@@ -8,8 +8,10 @@ const doubleValues = (arr) => {
     });
     return doubleArr;
 };
+// map
+const doubleValues2 = (arr) => arr.map((item) => item * 2);
 
-// console.log(doubleValues(myArr));
+// console.log(doubleValues2(myArr));
 
 // 11.2.2
 const onlyEvenValues = (arr) => {
@@ -48,9 +50,19 @@ const myArr4 = ["hi", 1, 2, "sh", "bye"];
 const vowelCount = (string) => {
     const loweCaseArr = string.toLowerCase().split("");
     const countsObj = {};
-    loweCaseArr.map((char) =>
-        char in countsObj ? countsObj[char]++ : (countsObj[char] = 1)
-    );
+    loweCaseArr.forEach((char) => {
+        switch (char) {
+            case "a":
+            case "o":
+            case "u":
+            case "i":
+            case "e":
+                char in countsObj ? countsObj[char]++ : (countsObj[char] = 1);
+                break;
+            default:
+                break;
+        }
+    });
     return countsObj;
 };
 
@@ -59,16 +71,10 @@ const vowelCount = (string) => {
 // 11.2.5
 const capitalize = (string) => {
     const lettersArr = string.split("");
-    const capitalizeArr = [];
-    lettersArr.forEach((char) => {
-        capitalizeArr.push(char.toUpperCase());
-    });
-    return capitalizeArr.join("");
+    return lettersArr.map((char) => char.toUpperCase()).join("");
 };
 
-console.log(capitalize("hi my name is shir zahavi"));
-
-// !TODO: another approach
+// console.log(capitalize("hi my name is shir zahavi"));
 
 // 11.2.6
 const shiftLetters = (string) => {
@@ -94,19 +100,11 @@ const shiftDownByOne = (letter) => {
 
 // 11.2.7
 const swapCase = (string) => {
-    const lettersArr = string.split("");
-    const capitalizeArr = [];
-    lettersArr.forEach((char, index) => {
-        if (
-            lettersArr[index - 1] === undefined ||
-            lettersArr[index - 1] === " "
-        ) {
-            capitalizeArr.push(char.toUpperCase());
-        } else {
-            capitalizeArr.push(char);
-        }
+    const wordsArr = string.split(" ");
+    const capitalizeArr = wordsArr.map((word) => {
+        return word[0].toUpperCase() + word.slice(1);
     });
-    return capitalizeArr.join("");
+    return capitalizeArr.join(" ");
 };
 
-console.log(swapCase("hi my name is shir zahavi"));
+// console.log(swapCase("hi my name is shir zahavi"));
