@@ -51,5 +51,9 @@ function buy(candyStore, id) {
     candyStore.cashRegister += selectedCandy.price;
 }
 
-buy(candyStore, "5hd7y");
-console.log(candyStore);
+// buy(candyStore, "5hd7y");
+// buy(candyStore, "5hd7y");
+// buy(candyStore, "5hd7y");
+// buy(candyStore, "5hd7y");
+// console.log(buy(candyStore, "5hd7y"));
+// console.log(candyStore);
