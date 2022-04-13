@@ -65,7 +65,7 @@ const bornBefore1990 = (arr) => {
     return newArr;
 };
 
-console.log(bornBefore1990(data));
+// console.log(bornBefore1990(data));
 
 // 11.3.3
 
@@ -75,8 +75,6 @@ const timesOfFoodISPresent = (arr) => {
         person.favoriteFoods.meats.forEach((meat) => {
             meat in favFoodObj ? favFoodObj[meat]++ : (favFoodObj[meat] = 1);
         });
-    });
-    arr.forEach((person) => {
         person.favoriteFoods.fish.forEach((fish) => {
             fish in favFoodObj ? favFoodObj[fish]++ : (favFoodObj[fish] = 1);
         });
@@ -84,4 +82,4 @@ const timesOfFoodISPresent = (arr) => {
     return favFoodObj;
 };
 
-console.log(timesOfFoodISPresent(data));
+// console.log(timesOfFoodISPresent(data));
