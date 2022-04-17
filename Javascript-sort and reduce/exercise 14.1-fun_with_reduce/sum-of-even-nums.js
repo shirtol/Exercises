@@ -1,13 +1,12 @@
 const sumOfEven = (arr) => {
     if (Array.isArray(arr) && arr.every((el) => typeof el === "number")) {
-        const res = arr.reduce((accum, currVal) => {
+        return arr.reduce((accum, currVal) => {
             if (currVal % 2 === 0) {
                 return accum + currVal;
             } else {
                 return accum;
             }
         }, 0);
-        return res;
     }
     return "invalid input";
 };

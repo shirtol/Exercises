@@ -1,21 +1,19 @@
 const myMax = (arr) => {
     if (Array.isArray(arr) && arr.every((el) => typeof el === "number")) {
-        const max = arr.reduce((max, currVal) => {
+        return arr.reduce((max, currVal) => {
             if (currVal > max) {
                 return currVal;
             }
             return max;
         });
-        return max;
     }
     return "invalid input";
 };
 const myMax2 = (arr) => {
     if (Array.isArray(arr) && arr.every((el) => typeof el === "number")) {
-        const max = arr.reduce((max, currVal) => {
+        return arr.reduce((max, currVal) => {
             return Math.max(max, currVal);
         });
-        return max;
     }
     return "invalid input";
 };

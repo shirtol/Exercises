@@ -1,7 +1,8 @@
 const myAvg = (arr) => {
     if (Array.isArray(arr) && arr.every((el) => typeof el === "number")) {
-        const sum = arr.reduce((accum, currVal) => accum + currVal);
-        return sum / arr.length;
+        return arr.reduce((accum, currVal) => {
+            return accum + currVal / arr.length;
+        }, 0);
     }
     return "invalid input";
 };

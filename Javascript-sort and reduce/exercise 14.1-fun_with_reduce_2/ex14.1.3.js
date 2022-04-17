@@ -9,7 +9,7 @@ const addKeyAndValue = (arr, key, val) => {
 console.log(
     addKeyAndValue(
         [{ name: "Daniel" }, { name: "Shir" }],
-        "Last Name",
+        "lastName",
         "Toledano"
     )
 );
