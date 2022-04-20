@@ -13,8 +13,8 @@ should be the thing we are working on (like carMarket)*/
 //? @param {string} - name
 //? @return {Object} - agency object
 
-carMarket.getAgencyByName = function (name) {
-    for (const agency of carMarket.sellers) {
+carMarket.getAgencyByName = function (sellers, name) {
+    for (const agency of sellers) {
         if (agency.agencyName === name) {
             return agency;
         }
@@ -22,15 +22,15 @@ carMarket.getAgencyByName = function (name) {
     return "This agency name is not found in this market.";
 };
 
-carMarket.getAgencyByName2 = function (name) {
-    return carMarket.sellers.filter((seller) => seller.agencyName === name);
+carMarket.getAgencyByName2 = function (sellers, name) {
+    return sellers.filter((seller) => seller.agencyName === name);
 };
 
-// console.log(carMarket.getAgencyByName("Best Deal"));
-// console.log(carMarket.getAgencyByName("Best"));
-// console.log(carMarket.getAgencyByName("CarMax"));
+console.log(carMarket.getAgencyByName(carMarket.sellers, "Best Deal"));
+console.log(carMarket.getAgencyByName(carMarket.sellers, "Best"));
+console.log(carMarket.getAgencyByName(carMarket.sellers, "CarMax"));
 
-// console.log(carMarket.getAgencyByName2("CarMax"));
+console.log(carMarket.getAgencyByName2(carMarket.sellers, "CarMax"));
 
 //!--------------------------------------------------------------------
 
