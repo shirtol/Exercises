@@ -95,10 +95,10 @@ carMarket.getAllCarToBuy = function (sellers) {
 //? @param {string} - id of agency
 //? @return {object[]} - carsArray - arrays of all models objects of specific agency
 
-carMarket.getAllCarToBuyByAgencyId = function (agencyId) {
+carMarket.getAllCarToBuyByAgencyId = function (sellers, agencyId) {
     const carsArray = [];
     let agency;
-    for (const seller of carMarket.sellers) {
+    for (const seller of sellers) {
         if (seller.agencyId === agencyId) {
             agency = seller;
         }
@@ -112,7 +112,7 @@ carMarket.getAllCarToBuyByAgencyId = function (agencyId) {
     return carsArray;
 };
 
-// console.log(carMarket.getAllCarToBuyByAgencyId("Plyq5M5AZ"));
+console.log(carMarket.getAllCarToBuyByAgencyId(carMarket.sellers, "Plyq5M5AZ"));
 
 //!--------------------------------------------------------------------
 
