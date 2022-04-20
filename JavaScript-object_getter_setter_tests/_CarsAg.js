@@ -69,7 +69,7 @@ carMarket.getAllAgenciesName2 = function (sellers) {
 };
 
 // console.log(carMarket.getAllAgenciesName(carMarket.sellers));
-console.log(carMarket.getAllAgenciesName2(carMarket.sellers));
+// console.log(carMarket.getAllAgenciesName2(carMarket.sellers));
 
 //!--------------------------------------------------------------------
 
@@ -77,9 +77,9 @@ console.log(carMarket.getAllAgenciesName2(carMarket.sellers));
 //? @param {}
 //? @return {object[]} - allCarsToBuy - arrays of all cars objects
 
-carMarket.getAllCarToBuy = function () {
+carMarket.getAllCarToBuy = function (sellers) {
     const allCarsToBuy = [];
-    for (const agency of carMarket.sellers) {
+    for (const agency of sellers) {
         for (const car of agency.cars) {
             allCarsToBuy.push(car);
         }
@@ -87,7 +87,7 @@ carMarket.getAllCarToBuy = function () {
     return allCarsToBuy;
 };
 
-// console.log(carMarket.getAllCarToBuy());
+// console.log(carMarket.getAllCarToBuy(carMarket.sellers));
 
 //!--------------------------------------------------------------------
 
