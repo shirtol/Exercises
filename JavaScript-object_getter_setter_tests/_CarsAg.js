@@ -120,10 +120,10 @@ console.log(carMarket.getAllCarToBuyByAgencyId(carMarket.sellers, "Plyq5M5AZ"));
 //? @param {string} - agencyId -  id of agency
 // ? @return {string[]} - arrOfBrands - arrays of all brands name in specific agency
 
-carMarket.getAllBrandsToBuyAgencyId = function (agencyId) {
+carMarket.getAllBrandsToBuyAgencyId = function (sellers, agencyId) {
     const arrOfBrands = [];
     let agency;
-    for (const seller of carMarket.sellers) {
+    for (const seller of sellers) {
         if (seller.agencyId === agencyId) {
             agency = seller;
         }
@@ -134,7 +134,9 @@ carMarket.getAllBrandsToBuyAgencyId = function (agencyId) {
     return arrOfBrands;
 };
 
-// console.log(carMarket.getAllBrandsToBuyAgencyId("Plyq5M5AZ"));
+// console.log(
+//     carMarket.getAllBrandsToBuyAgencyId(carMarket.sellers, "Plyq5M5AZ")
+// );
 
 //!--------------------------------------------------------------------
 
