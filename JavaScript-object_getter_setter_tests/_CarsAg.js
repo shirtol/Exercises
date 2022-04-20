@@ -26,11 +26,11 @@ carMarket.getAgencyByName2 = function (sellers, name) {
     return sellers.filter((seller) => seller.agencyName === name);
 };
 
-console.log(carMarket.getAgencyByName(carMarket.sellers, "Best Deal"));
-console.log(carMarket.getAgencyByName(carMarket.sellers, "Best"));
-console.log(carMarket.getAgencyByName(carMarket.sellers, "CarMax"));
+// console.log(carMarket.getAgencyByName(carMarket.sellers, "Best Deal"));
+// console.log(carMarket.getAgencyByName(carMarket.sellers, "Best"));
+// console.log(carMarket.getAgencyByName(carMarket.sellers, "CarMax"));
 
-console.log(carMarket.getAgencyByName2(carMarket.sellers, "CarMax"));
+// console.log(carMarket.getAgencyByName2(carMarket.sellers, "CarMax"));
 
 //!--------------------------------------------------------------------
 
@@ -38,17 +38,17 @@ console.log(carMarket.getAgencyByName2(carMarket.sellers, "CarMax"));
 //? @param {String} - name
 //? @return {String} - agencyId
 
-carMarket.getAgencyIdByName = function (name) {
-    const agencyId = carMarket.getAgencyByName(name).agencyId;
+carMarket.getAgencyIdByName = function (sellers, name) {
+    const agencyId = carMarket.getAgencyByName(sellers, name).agencyId;
     if (agencyId === undefined) {
         return "This agency doesn't exist";
     }
     return agencyId;
 };
 
-// console.log(carMarket.getAgencyIdByName("Best Deal"));
-// console.log(carMarket.getAgencyIdByName("Best"));
-// console.log(carMarket.getAgencyIdByName("CarMax"));
+console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best Deal"));
+console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best"));
+console.log(carMarket.getAgencyIdByName(carMarket.sellers, "CarMax"));
 
 //!--------------------------------------------------------------------
 
@@ -680,10 +680,10 @@ carMarket.sellCar = function (agencyId, customerId, carModel) {
     return carModel;
 };
 
-console.log(
-    carMarket.sellCar(
-        "Plyq5M5AZ",
-        "BGzHhjnE8",
-        carMarket.sellers[0].cars[0].models[0]
-    )
-);
+// console.log(
+//     carMarket.sellCar(
+//         "Plyq5M5AZ",
+//         "BGzHhjnE8",
+//         carMarket.sellers[0].cars[0].models[0]
+//     )
+// );
