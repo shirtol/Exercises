@@ -112,7 +112,7 @@ carMarket.getAllCarToBuyByAgencyId = function (sellers, agencyId) {
     return carsArray;
 };
 
-console.log(carMarket.getAllCarToBuyByAgencyId(carMarket.sellers, "Plyq5M5AZ"));
+// console.log(carMarket.getAllCarToBuyByAgencyId(carMarket.sellers, "Plyq5M5AZ"));
 
 //!--------------------------------------------------------------------
 
@@ -149,8 +149,8 @@ carMarket.getAllBrandsToBuyAgencyId = function (sellers, agencyId) {
 //? @param {string} - name
 //? @return {Object} - customer
 
-carMarket.getCustomerByName = function (name) {
-    for (const customer of carMarket.customers) {
+carMarket.getCustomerByName = function (customers, name) {
+    for (const customer of customers) {
         if (customer.name === name) {
             return customer;
         }
@@ -158,8 +158,8 @@ carMarket.getCustomerByName = function (name) {
     return "This customer is not found.";
 };
 
-// console.log(carMarket.getCustomerByName("Lilah Goulding"));
-// console.log(carMarket.getCustomerByName("Lilah Goulb"));
+// console.log(carMarket.getCustomerByName(carMarket.customers, "Lilah Goulding"));
+// console.log(carMarket.getCustomerByName(carMarket.customers, "Lilah Goulb"));
 
 //!--------------------------------------------------------------------
 
