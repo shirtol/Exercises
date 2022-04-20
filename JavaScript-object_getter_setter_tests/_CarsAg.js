@@ -46,9 +46,9 @@ carMarket.getAgencyIdByName = function (sellers, name) {
     return agencyId;
 };
 
-console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best Deal"));
-console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best"));
-console.log(carMarket.getAgencyIdByName(carMarket.sellers, "CarMax"));
+// console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best Deal"));
+// console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best"));
+// console.log(carMarket.getAgencyIdByName(carMarket.sellers, "CarMax"));
 
 //!--------------------------------------------------------------------
 
@@ -56,15 +56,20 @@ console.log(carMarket.getAgencyIdByName(carMarket.sellers, "CarMax"));
 //? @param {}
 //? @return {string[]} - agenciesNameArr - Array of all agencies name
 
-carMarket.getAllAgenciesName = function () {
+carMarket.getAllAgenciesName = function (sellers) {
     const agenciesNameArr = [];
-    for (const agency of carMarket.sellers) {
+    for (const agency of sellers) {
         agenciesNameArr.push(agency.agencyName);
     }
     return agenciesNameArr;
 };
 
-// console.log(carMarket.getAllAgenciesName());
+carMarket.getAllAgenciesName2 = function (sellers) {
+    return sellers.map((seller) => seller.agencyName);
+};
+
+// console.log(carMarket.getAllAgenciesName(carMarket.sellers));
+console.log(carMarket.getAllAgenciesName2(carMarket.sellers));
 
 //!--------------------------------------------------------------------
 
