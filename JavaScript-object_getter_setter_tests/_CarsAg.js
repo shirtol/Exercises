@@ -23,7 +23,7 @@ carMarket.getAgencyByName = function (sellers, name) {
 };
 
 carMarket.getAgencyByName2 = function (sellers, name) {
-    return sellers.filter((seller) => seller.agencyName === name);
+    return sellers.filter((seller) => seller.agencyName === name)[0];
 };
 
 // console.log(carMarket.getAgencyByName(carMarket.sellers, "Best Deal"));
@@ -751,3 +751,5 @@ carMarket.sellCar = function (
 //         carMarket.sellers[0].cars[0].models[0]
 //     )
 // );
+
+module.exports = carMarket;
