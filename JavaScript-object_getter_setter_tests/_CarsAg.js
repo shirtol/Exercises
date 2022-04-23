@@ -1,8 +1,6 @@
 const carMarket = require("./carMarket");
 
 //?--------------------------------------------------------------------
-/*TODO: Add another parameter to each method, the parameter
-should be the thing we are working on (like carMarket)*/
 
 //! agency's func's
 //todo getters
@@ -19,11 +17,11 @@ carMarket.getAgencyByName = function (sellers, name) {
             return agency;
         }
     }
-    return "This agency name is not found in this market.";
+    return undefined;
 };
 
 carMarket.getAgencyByName2 = function (sellers, name) {
-    return sellers.filter((seller) => seller.agencyName === name)[0];
+    return sellers.find((seller) => seller.agencyName === name);
 };
 
 // console.log(carMarket.getAgencyByName(carMarket.sellers, "Best Deal"));
@@ -31,6 +29,7 @@ carMarket.getAgencyByName2 = function (sellers, name) {
 // console.log(carMarket.getAgencyByName(carMarket.sellers, "CarMax"));
 
 // console.log(carMarket.getAgencyByName2(carMarket.sellers, "CarMax"));
+// console.log(carMarket.getAgencyByName2(carMarket.sellers, "c"));
 
 //!--------------------------------------------------------------------
 
@@ -39,11 +38,8 @@ carMarket.getAgencyByName2 = function (sellers, name) {
 //? @return {String} - agencyId
 
 carMarket.getAgencyIdByName = function (sellers, name) {
-    const agencyId = carMarket.getAgencyByName(sellers, name).agencyId;
-    if (agencyId === undefined) {
-        return "This agency doesn't exist";
-    }
-    return agencyId;
+    const agency = carMarket.getAgencyByName(sellers, name);
+    return agency ? agency.agencyId : undefined;
 };
 
 // console.log(carMarket.getAgencyIdByName(carMarket.sellers, "Best Deal"));
@@ -87,7 +83,24 @@ carMarket.getAllCarToBuy = function (sellers) {
     return allCarsToBuy;
 };
 
+carMarket.getAllCarToBuy2 = function (sellers) {
+    return sellers.reduce((acc, agency) => {
+        return acc.concat(agency.cars);
+    }, []);
+};
+
+const combineTwoArrays = (firstArr, secondArr) => [...firstArr, ...secondArr];
+
+carMarket.getAllCarToBuy3 = function (sellers) {
+    return sellers.reduce(
+        (acc, agency) => combineTwoArrays(acc, agency.cars),
+        []
+    );
+};
+
 // console.log(carMarket.getAllCarToBuy(carMarket.sellers));
+// console.log(carMarket.getAllCarToBuy2(carMarket.sellers));
+// console.log(carMarket.getAllCarToBuy3(carMarket.sellers));
 
 //!--------------------------------------------------------------------
 
@@ -95,14 +108,15 @@ carMarket.getAllCarToBuy = function (sellers) {
 //? @param {string} - id of agency
 //? @return {object[]} - carsArray - arrays of all models objects of specific agency
 
+// Helper function:
+carMarket.getAgencyById = function (sellers, agencyId) {
+    return sellers.find((agency) => agency.agencyId === agencyId);
+};
+
 carMarket.getAllCarToBuyByAgencyId = function (sellers, agencyId) {
     const carsArray = [];
-    let agency;
-    for (const seller of sellers) {
-        if (seller.agencyId === agencyId) {
-            agency = seller;
-        }
-    }
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) return undefined;
     for (const car of agency.cars) {
         for (const model of car.models) {
             carsArray.push(model);
@@ -112,7 +126,19 @@ carMarket.getAllCarToBuyByAgencyId = function (sellers, agencyId) {
     return carsArray;
 };
 
+carMarket.getAllCarToBuyByAgencyId2 = function (sellers, agencyId) {
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    return agency
+        ? agency.cars.reduce(
+              (acc, car) => combineTwoArrays(acc, car.models),
+              []
+          )
+        : undefined;
+};
 // console.log(carMarket.getAllCarToBuyByAgencyId(carMarket.sellers, "Plyq5M5AZ"));
+// console.log(
+//     carMarket.getAllCarToBuyByAgencyId2(carMarket.sellers, "Plyq5M5AZ")
+// );
 
 //!--------------------------------------------------------------------
 
@@ -122,20 +148,25 @@ carMarket.getAllCarToBuyByAgencyId = function (sellers, agencyId) {
 
 carMarket.getAllBrandsToBuyAgencyId = function (sellers, agencyId) {
     const arrOfBrands = [];
-    let agency;
-    for (const seller of sellers) {
-        if (seller.agencyId === agencyId) {
-            agency = seller;
-        }
-    }
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) return undefined;
     for (const car of agency.cars) {
         arrOfBrands.push(car.brand);
     }
     return arrOfBrands;
 };
 
+carMarket.getAllBrandsToBuyAgencyId2 = function (sellers, agencyId) {
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) return undefined;
+    return agency.cars.map((car) => car.brand);
+};
+
 // console.log(
 //     carMarket.getAllBrandsToBuyAgencyId(carMarket.sellers, "Plyq5M5AZ")
+// );
+// console.log(
+//     carMarket.getAllBrandsToBuyAgencyId2(carMarket.sellers, "Plyq5M5AZ")
 // );
 
 //!--------------------------------------------------------------------
@@ -149,17 +180,29 @@ carMarket.getAllBrandsToBuyAgencyId = function (sellers, agencyId) {
 //? @param {string} - name
 //? @return {Object} - customer
 
+carMarket.getCustomerById = function (customers, customerId) {
+    return customers.find((person) => person.id === customerId);
+};
+
 carMarket.getCustomerByName = function (customers, name) {
     for (const customer of customers) {
         if (customer.name === name) {
             return customer;
         }
     }
-    return "This customer is not found.";
+    return undefined;
+};
+
+carMarket.getCustomerByName2 = function (customers, name) {
+    return customers.find((customer) => customer.name === name);
 };
 
 // console.log(carMarket.getCustomerByName(carMarket.customers, "Lilah Goulding"));
 // console.log(carMarket.getCustomerByName(carMarket.customers, "Lilah Goulb"));
+// console.log(
+//     carMarket.getCustomerByName2(carMarket.customers, "Lilah Goulding")
+// );
+// console.log(carMarket.getCustomerByName2(carMarket.customers, "Lilah Goulb"));
 
 //!--------------------------------------------------------------------
 
@@ -167,19 +210,15 @@ carMarket.getCustomerByName = function (customers, name) {
 //? @param {name}
 //? @return {String} - customerId - The customer id
 
-carMarket.getCustomerIdByName = function (carMarket, name) {
-    const customerId = carMarket.getCustomerByName(
-        carMarket.customers,
-        name
-    ).id;
-    if (customerId === undefined) {
-        return "This customer doesn't exist";
-    }
-    return customerId;
+carMarket.getCustomerIdByName = function (customers, name) {
+    const customer = carMarket.getCustomerByName(customers, name);
+    return customer ? customer.id : undefined;
 };
 
-// console.log(carMarket.getCustomerIdByName(carMarket, "Lilah Goulding"));
-// console.log(carMarket.getCustomerIdByName(carMarket, "Lilah Goulb"));
+// console.log(
+//     carMarket.getCustomerIdByName(carMarket.customers, "Lilah Goulding")
+// );
+// console.log(carMarket.getCustomerIdByName(carMarket.customers, "Lilah Goulb"));
 
 //!--------------------------------------------------------------------
 
@@ -195,7 +234,12 @@ carMarket.getAllCustomersNames = function (customers) {
     return customersNameArr;
 };
 
+carMarket.getAllCustomersNames2 = function (customers) {
+    return customers.map((customer) => customer.name);
+};
+
 // console.log(carMarket.getAllCustomersNames(carMarket.customers));
+// console.log(carMarket.getAllCustomersNames2(carMarket.customers));
 
 //!--------------------------------------------------------------------
 
@@ -204,16 +248,8 @@ carMarket.getAllCustomersNames = function (customers) {
 //? @return {object[]} - customerCarsArr -  Array of all customer cars object
 
 carMarket.getAllCustomerCars = function (customers, costumerId) {
-    let costumer;
-    for (const person of customers) {
-        if (person.id === costumerId) {
-            costumer = person;
-        }
-    }
-    if (costumer === undefined) {
-        return "This customer doesn't exist";
-    }
-    return costumer.cars;
+    const customer = carMarket.getCustomerById(customers, costumerId);
+    return customer ? customer.cars : undefined;
 };
 
 // console.log(carMarket.getAllCustomerCars(carMarket.customers, "cnTobUDy6"));
@@ -226,16 +262,8 @@ carMarket.getAllCustomerCars = function (customers, costumerId) {
 //? @return {number} - CustomerCash
 
 carMarket.getCustomerCash = function (customers, costumerId) {
-    let costumer;
-    for (const person of customers) {
-        if (person.id === costumerId) {
-            costumer = person;
-        }
-    }
-    if (costumer === undefined) {
-        return "This customer doesn't exist";
-    }
-    return costumer.cash;
+    const customer = carMarket.getCustomerById(customers, costumerId);
+    return customer ? customer.cash : undefined;
 };
 
 // console.log(carMarket.getCustomerCash(carMarket.customers, "cnTobUDy6"));
@@ -295,18 +323,25 @@ carMarket.setPropertyBrandToAllCars = function (sellers, customers) {
 //? @return {}
 
 carMarket.setNewCarToAgency = function (sellers, agencyId, carObject) {
-    const currAgency = sellers.find((seller) => seller.agencyId === agencyId);
-    if (!currAgency) {
-        return "This agency is not found in this market.";
-    }
-    currAgency.cars.push(carObject);
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) return undefined;
+    agency.cars.push(carObject);
+};
+carMarket.setNewCarToAgency2 = function (sellers, agencyId, carObject) {
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) throw new Error("Invalid agency id");
+    agency.cars.push(carObject);
 };
 
-// carMarket.setNewCarToAgency(carMarket.sellers, "Plyq5M5AZ", {
-//     brand: "toledano",
-//     models: [],
-// });
-// console.log(carMarket.sellers[0].cars);
+// try {
+//     carMarket.setNewCarToAgency2(carMarket.sellers, "Plyq5M5AZ", {
+//         brand: "toledano",
+//         models: [],
+//     });
+//     console.log(carMarket.sellers[0].cars);
+// } catch (ex) {
+//     console.log(ex);
+// }
 
 //!------------------------------------------------------------
 
@@ -317,23 +352,17 @@ carMarket.setNewCarToAgency = function (sellers, agencyId, carObject) {
 // Assumption: Car id is carNumber, so one car model will be deleted.
 
 carMarket.deleteCarFromAgency = function (sellers, agencyId, carId) {
-    const agency = sellers.find((seller) => seller.agencyId === agencyId);
-
-    if (!agency) return null;
-
-    for (const car of agency.cars) {
-        let modelIdx;
-        for (const model of car.models) {
-            if (carId === model.carNumber) {
-                modelIdx = car.models.indexOf(model);
-            }
-        }
-        car.models.splice(modelIdx, 1);
-    }
+    const isSearchedCar = (model) => model.carNumber === carId;
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    if (!agency) return undefined;
+    const car = agency.cars.find((car) => car.models.some(isSearchedCar));
+    if (!car) return undefined;
+    const modelIdx = car.models.findIndex(isSearchedCar);
+    car.models.splice(modelIdx, 1);
 };
 
-// carMarket.deleteCarFromAgency(carMarket.sellers, "Plyq5M5AZ", "S6DL1");
-// console.log(carMarket.sellers[0].cars[0].models);
+carMarket.deleteCarFromAgency(carMarket.sellers, "Plyq5M5AZ", "S6DL1");
+console.log(carMarket.sellers[0].cars[0].models);
 
 //!------------------------------------------------------------
 
@@ -675,20 +704,6 @@ carMarket.searchCar = function (
 
 //!      - Try to divide the tasks into several functions and try to maintain a readable language.
 
-const getAgencyById = function (sellers, agencyId) {
-    const agency = sellers.find((agency) => agency.agencyId === agencyId);
-
-    if (!agency) return null;
-    return agency;
-};
-
-const getCustomerById = function (customers, customerId) {
-    const customer = customers.find((person) => person.id === customerId);
-
-    if (!customer) return null;
-    return customer;
-};
-
 const subtractCarPriceFromCustomerCash = function (customer, price) {
     customer.cash -= 1.17 * price;
     return customer.cash;
@@ -728,8 +743,8 @@ carMarket.sellCar = function (
     customerId,
     carModel
 ) {
-    const agency = getAgencyById(sellers, agencyId);
-    const customer = getCustomerById(customers, customerId);
+    const agency = carMarket.getAgencyById(sellers, agencyId);
+    const customer = carMarket.getCustomerById(customers, customerId);
     if (!checkIfCarIsInAgency(agency, carModel))
         return "The vehicle does not exist at the agency";
 
