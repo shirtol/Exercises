@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="myFirstDiv"></div>
+        <div id="mySecondDiv"></div>
+        <div id="myThridDiv"></div>
+        <div id="myFourthDiv"></div>
+    </body>
+    <script>
+        // stored in array- one way:
+        const divsArr = [];
+        const allDivs = document.querySelectorAll("div");
+        allDivs.forEach((div) => {
+            divsArr.push(div);
+        });
+        console.log(divsArr);
+
+        // stored in array- another way:
+        const divsArr2 = [...allDivs];
+        console.log(divsArr2);
+    </script>
+</html>
