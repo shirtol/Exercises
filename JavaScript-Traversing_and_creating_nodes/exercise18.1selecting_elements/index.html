@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+        <meta
+            name="viewport"
+            content="width=device-width,
+initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Header</h1>
+        <p>Paragraph</p>
+        <a href="#">link</a>
+        <img src="" alt="" />
+        <div class="x">Div with a class</div>
+        <div id="y">Div with an id</div>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+    </body>
+    <script>
+        //your js code here
+        //not using querySelector:
+        // const h1 = document.getElementsByTagName("h1");
+        // console.dir(h1);
+        // const p = document.getElementsByTagName("p");
+        // console.dir(p);
+        // const a = document.getElementsByTagName("a");
+        // console.dir(a);
+        // const image = document.getElementsByTagName("img");
+        // console.dir(image);
+        // const divWithClass = document.getElementsByClassName("x");
+        // console.dir(divWithClass);
+        // const divWithId = document.getElementById("y");
+        // console.dir(divWithId);
+        // const allInput = document.getElementsByTagName("input");
+        // console.dir(allInput);
+        // const firstInput = allInput[0];
+        // console.dir(firstInput);
+        // const secondInput = allInput[1];
+        // console.dir(secondInput);
+        // const thirdInput = allInput[2];
+        // console.dir(thirdInput);
+
+        // using querySelector:
+        // const h1 = document.querySelector("h1");
+        // console.dir(h1);
+        // const p = document.querySelector("p");
+        // console.dir(p);
+        // const a = document.querySelector("a");
+        // console.dir(a);
+        // const image = document.querySelector("img");
+        // console.dir(image);
+        // const divWithClass = document.querySelector(".x");
+        // console.dir(divWithClass);
+        // const divWithId = document.querySelector("#y");
+        // console.dir(divWithId);
+        // const allInput = document.querySelectorAll("input");
+        // console.dir(allInput);
+        // const firstInput = allInput[0];
+        // console.dir(firstInput);
+        // const secondInput = allInput[1];
+        // console.dir(secondInput);
+        // const thirdInput = allInput[2];
+        // console.dir(thirdInput);
+
+        // 18.1.3
+        // const allInput = document.querySelectorAll("input");
+        // allInput.forEach((input) => {
+        //     console.dir(input);
+        // });
+
+        const allInput = document.getElementsByTagName("input");
+        const inputArr = [...allInput];
+        console.dir(allInput);
+        inputArr.forEach((input) => {
+            console.dir(input);
+        });
+    </script>
+</html>
