@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#text {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+input {
+    width: 20rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+button {
+    display: inline-block;
+    height: 3rem;
+    width: 7rem;
+    font-size: 1.5rem;
+    margin: 0 2rem;
+    cursor: pointer;
+}
