@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    font-size: 1.2rem;
+}
+
+button {
+    display: inline-block;
+    height: 5rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 2rem;
+    cursor: pointer;
+    position: absolute;
+}
+
+#plus {
+    left: 0;
+}
+
+#minus {
+    right: 0;
+}
+
+#text {
+    max-width: 80%;
+}
