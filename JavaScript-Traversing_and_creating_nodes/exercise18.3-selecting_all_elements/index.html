@@ -20,9 +20,13 @@
             divsArr.push(div);
         });
         console.log(divsArr);
+        // const [myFirstDiv, mySecondDiv, myThirdDiv, myFourthDiv] = [...divsArr];
 
         // stored in array- another way:
         const divsArr2 = [...allDivs];
         console.log(divsArr2);
+        const [myFirstDiv, mySecondDiv, myThirdDiv, myFourthDiv] = [
+            ...divsArr2,
+        ];
     </script>
 </html>
