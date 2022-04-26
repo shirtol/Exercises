@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    /* align-items: center; */
+    border: 1px dotted #777;
+    width: max-content;
+    padding: 4rem;
+}
+
+input {
+    margin: 2rem 0;
+    display: flex;
+    height: 2.2rem;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#submit {
+    /* text-align: center; */
+    /* width: max-content; */
+    align-self: center;
+    padding: 0 2rem;
+}
