@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+}
+
+.container {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header {
+    margin-bottom: 5rem;
+}
+
+input {
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+}
+
+#guess {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+#keys {
+    font-size: 2.5rem;
+}
