@@ -10,11 +10,7 @@ const squirtle = new Pokemon("squirtle", "water", [
     "Aqua tail",
 ]);
 
-const eevee = new Pokemon("eevee", "normal", [
-    "dig",
-    "swift",
-    "body slam elite TM",
-]);
+const eevee = new Pokemon("eevee", "normal", ["dig", "swift", "body slam"]);
 
 const totodile = new Pokemon("totodile", "water", [
     "water gun",
