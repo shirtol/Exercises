@@ -29,7 +29,7 @@ console.log(found2);
 
 // reduce
 Array.prototype.myReduce = function (callback, initialVal = this[0]) {
-    let acc = initialVal === this[0] ? this[0] : initialVal;
+    let acc = initialVal;
     for (let i = initialVal === this[0] ? 1 : 0; i < this.length; i++) {
         acc = callback(acc, this[i], i, this);
     }
@@ -46,4 +46,5 @@ const sum = myArr3.myReduce((prevVal, currVal) => {
 console.log(sum);
 
 console.log([1, 100].myReduce((a, b) => Math.max(a, b), 50));
+console.log([1, 100].myReduce((a, b) => Math.max(a, b), 101));
 console.log([50].myReduce((a, b) => Math.max(a, b), 10));
