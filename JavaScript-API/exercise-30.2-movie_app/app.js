@@ -1,18 +1,39 @@
 class MovieInfo {
-    constructor(json) {
-        this.poster = json.Poster;
-        this.title = json.Title;
-        this.genre = json.Genre;
-        this.year = json.Year;
-        this.plot = json.Plot;
-        this.director = json.Director;
-        this.actors = json.Actors;
-        this.ratings = json.Ratings;
+    constructor({
+        Poster,
+        Title,
+        Genre,
+        Year,
+        Plot,
+        Director,
+        Actors,
+        Ratings,
+    }) {
+        this.poster = Poster;
+        this.title = Title;
+        this.genre = Genre;
+        this.year = Year;
+        this.plot = Plot;
+        this.director = Director;
+        this.actors = Actors;
+        this.ratings = Ratings;
     }
 }
 
-const movieDoesntExists = (moviesData) =>
-    moviesData.Error === "Movie not found!";
+class MovieDOMEl {
+    constructor() {
+        this.img = document.querySelector(".img-container");
+        this.title = document.querySelector(".title");
+        this.genre = document.querySelector(".genre");
+        this.year = document.querySelector(".year");
+        this.plot = document.querySelector(".plot");
+        this.director = document.querySelector(".director");
+        this.actors = document.querySelector(".actors");
+        this.rating = document.querySelector(".ratings-container");
+    }
+}
+
+const isMovieExists = (moviesData) => moviesData.Error !== "Movie not found!";
 
 const getMovieID = async () => {
     const input = document.querySelector("#user-input").value;
@@ -22,7 +43,7 @@ const getMovieID = async () => {
         );
 
         moviesData = await allMoviesWithThatName.json();
-        if (movieDoesntExists(moviesData)) {
+        if (!isMovieExists(moviesData)) {
             alert("this movie doesn't exists!");
             return null;
         }
@@ -30,6 +51,7 @@ const getMovieID = async () => {
         return moviesData.Search[0].imdbID;
     } catch (err) {
         console.log(err);
+        return null;
     }
 };
 
@@ -38,16 +60,15 @@ const ratingWebsBelowThree = (movieInfoData) =>
 
 const getMovieInfo = async () => {
     try {
-        const movieByID = await getMovieID();
-        if (movieByID !== null) {
-            const movieID = movieByID;
+        const movieID = await getMovieID();
+        if (movieID !== null) {
             const movieInfo = await fetch(
                 `http://www.omdbapi.com/?i=${movieID}&apikey=45618c55&`
             );
             const movieInfoData = await movieInfo.json();
             if (ratingWebsBelowThree(movieInfoData)) {
                 alert(
-                    "The movie you a re searching for doesn't contain all the rating information"
+                    "The movie you are searching for doesn't contain all the rating information"
                 );
                 return null;
             }
@@ -60,55 +81,42 @@ const getMovieInfo = async () => {
     return null;
 };
 
-const getDOMElements = () => [
-    document.querySelector(".img-container"),
-    document.querySelector(".title"),
-    document.querySelector(".genre"),
-    document.querySelector(".year"),
-    document.querySelector(".plot"),
-    document.querySelector(".director"),
-    document.querySelector(".actors"),
-    document.querySelector(".ratings-container"),
-];
+const addStylingClasses = (movieEl) => {
+    document.querySelector(".movie-container").classList.add("container-style");
+    document.querySelector(".movie-container").classList.add("shadow");
+    movieEl.img.classList.add("shadow");
+};
+
+const populateRatings = (movieEl, movieInfo) => {
+    for (let i = 0; i < [...movieEl.rating.children].length; i++) {
+        [...movieEl.rating.children][i].textContent = `${[
+            ...movieEl.rating.children,
+        ][i].getAttribute("data-rating")}: ${movieInfo.ratings[i].Value}`;
+    }
+};
+
+const populateMovieInfo = (movieEl, movieInfo) => {
+    movieEl.img.style.backgroundImage = `url(${movieInfo.poster})`;
+    movieEl.title.textContent = `Title: ${movieInfo.title}`;
+    movieEl.genre.textContent = `Genre: ${movieInfo.genre}`;
+    movieEl.year.textContent = `year: ${movieInfo.year}`;
+    movieEl.plot.textContent = `plot: ${movieInfo.plot}`;
+    movieEl.director.textContent = `director: ${movieInfo.director}`;
+    movieEl.actors.textContent = `actors: ${movieInfo.actors}`;
+    populateRatings(movieEl, movieInfo);
+};
 
 const displayMovieInfo = async () => {
-    const movieInfo = await getMovieInfo();
+    try {
+        const movieInfo = await getMovieInfo();
 
-    if (movieInfo !== null) {
-        const [
-            imgEl,
-            titleEl,
-            genreEl,
-            yearEl,
-            plotEl,
-            directorEl,
-            actorsEl,
-            ratingEl,
-        ] = getDOMElements();
-        imgEl.style.backgroundImage = "";
-        titleEl.textContent = "Title: ";
-        genreEl.textContent = "Genre: ";
-        yearEl.textContent = "Year: ";
-        plotEl.textContent = "Plot: ";
-        directorEl.textContent = "Director: ";
-        actorsEl.textContent = "Actors: ";
-        [...ratingEl.children].forEach((child) => {
-            child.textContent = `${child.getAttribute("data-rating")}: `;
-        });
-
-        document
-            .querySelector(".movie-container")
-            .classList.add("container-style");
-        imgEl.style.backgroundImage = `url(${movieInfo.poster})`;
-        titleEl.textContent += movieInfo.title;
-        genreEl.textContent += movieInfo.genre;
-        yearEl.textContent += movieInfo.year;
-        plotEl.textContent += movieInfo.plot;
-        directorEl.textContent += movieInfo.director;
-        actorsEl.textContent += movieInfo.actors;
-        for (let i = 0; i < [...ratingEl.children].length; i++) {
-            [...ratingEl.children][i].textContent += movieInfo.ratings[i].Value;
+        if (movieInfo !== null) {
+            const movieEl = new MovieDOMEl();
+            addStylingClasses(movieEl);
+            populateMovieInfo(movieEl, movieInfo);
         }
+    } catch (err) {
+        console.log(err);
     }
     document.querySelector("input").value = "";
 };

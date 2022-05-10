@@ -16,7 +16,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* color: #fff; */
 }
 
 .bg {
@@ -80,8 +79,6 @@ input {
     gap: 2rem;
     padding-top: 2rem;
     align-self: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 7px;
 }
 
 .movie-container > * {
@@ -98,6 +95,9 @@ input {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.shadow {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 7px;
 }
